@@ -25,7 +25,7 @@ import cn.zj.easynet.util.SendSMSUtil;
 
 import com.alibaba.fastjson.JSON;
 import com.alibaba.fastjson.JSONObject;
-import com.netease.om.Monitor;
+//import com.netease.om.Monitor;
 
 /**
  * 发送短信验证码接口
@@ -45,9 +45,9 @@ public class GetAuthCodeServlet extends HttpServlet {
     }
     
     public void initMonitor(){
-		Monitor m = Monitor.getInstance(ConfigUtil.MONITOR_PRODUCT_NAME);
+/*		Monitor m = Monitor.getInstance(ConfigUtil.MONITOR_PRODUCT_NAME);
 		m.setXmppAddress(ConfigUtil.MONITOR_XMPP_ADDRESS);
-		m.init();
+		m.init();*/
 	}
     
     @Override
@@ -93,7 +93,7 @@ public class GetAuthCodeServlet extends HttpServlet {
         	
         	logger.debug("receiver: " + map.get("receiver"));
         	logger.debug("authCode: " + map.get("authCode"));
-        	Monitor.increase(ConfigUtil.GET_AUTH_CODE);
+//        	Monitor.increase(ConfigUtil.GET_AUTH_CODE);
         	ret = SendSMSUtil.getInstance().sendSMS(map);
         	
         	tempJson = !StringUtils.isBlank(ret) ? JSONObject.parseObject(ret) : null;

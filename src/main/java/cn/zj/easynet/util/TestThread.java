@@ -3,7 +3,7 @@ package cn.zj.easynet.util;
 import java.util.concurrent.CountDownLatch;
 import java.util.concurrent.atomic.AtomicInteger;
 
-import org.apache.poi.hssf.util.HSSFColor.VIOLET;
+//import org.apache.poi.hssf.util.HSSFColor.VIOLET;
 
 
 public class TestThread implements Runnable {

@@ -34,7 +34,7 @@ public class RSAUtil {
         return instance;
     }
 
-    public void generateKeyPair(String key_path, String name_prefix) {
+/*    public void generateKeyPair(String key_path, String name_prefix) {
         KeyPairGenerator keygen = null;
         try {
             keygen = KeyPairGenerator.getInstance("RSA");
@@ -168,7 +168,7 @@ public class RSAUtil {
             this.log.error("RSA签名验证异常," + e.getMessage());
         }
         return false;
-    }
+    }*/
 
     public static void main(String[] args) {
     }

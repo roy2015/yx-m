@@ -27,7 +27,7 @@ import cn.zj.easynet.util.Utils;
 
 import com.alibaba.fastjson.JSON;
 import com.alibaba.fastjson.JSONObject;
-import com.netease.om.Monitor;
+//import com.netease.om.Monitor;
 
 /**
  * Servlet implementation class CheckAuthCodeServlet
@@ -73,9 +73,9 @@ public class CheckAuthCodeServlet extends HttpServlet {
     }
 	
 	public void initMonitor(){
-		Monitor m = Monitor.getInstance(ConfigUtil.MONITOR_PRODUCT_NAME);
+	/*	Monitor m = Monitor.getInstance(ConfigUtil.MONITOR_PRODUCT_NAME);
 		m.setXmppAddress(ConfigUtil.MONITOR_XMPP_ADDRESS);
-		m.init();
+		m.init();*/
 	}
 	
 	public void initThread(){
@@ -165,7 +165,7 @@ public class CheckAuthCodeServlet extends HttpServlet {
                 }else{//验证码正确必填字段都有
                 	logger.debug("mobile:\t" + receiver );
                 	logger.debug("password:\t" + request.getParameter("password") );
-                	Monitor.increase(ConfigUtil.CHECK_AUTH_CODE);
+//                	Monitor.increase(ConfigUtil.CHECK_AUTH_CODE);
         	
             		//开户 调MML接口
                 	try{
@@ -217,7 +217,7 @@ public class CheckAuthCodeServlet extends HttpServlet {
         						json.put("message", tempJson.getString("description"));
     						}
     						logger.debug("doPost():\t" + str);
-    						Monitor.increase(ConfigUtil.CREATE_ECP_ACCOUNT);
+//    						Monitor.increase(ConfigUtil.CREATE_ECP_ACCOUNT);
     					}
             			
                 	}catch(Exception e){

@@ -63,9 +63,6 @@ import cn.zj.easynet.remote.request.ZxAccountReq;
 import cn.zj.easynet.util.security.RSAUtil;
 
 import com.alibaba.fastjson.JSON;
-import com.jcraft.jsch.ChannelSftp.LsEntry;
-import com.lianpay.lcpay.common.ftp.SFtpClient;
-import com.netease.om.Monitor;
 
 import freemarker.cache.ClassTemplateLoader;
 import freemarker.cache.TemplateLoader;
@@ -721,14 +718,14 @@ public class MainTest {
     }
 
     public static void test7() {
-        Monitor m = Monitor.getInstance(ConfigUtil.MONITOR_PRODUCT_NAME);
+        /*Monitor m = Monitor.getInstance(ConfigUtil.MONITOR_PRODUCT_NAME);
 
         m.setXmppAddress(ConfigUtil.MONITOR_XMPP_ADDRESS);
         m.init();
         Monitor.increase("CREATE_USER_ACCOUNT1"); // 记数+1
         Monitor.increase("CREATE_USER_ACCOUNT1");
         Monitor.setAttributeCount("CREATE_USER_ACCOUNT1", 99);
-        // System.out.println( Monitor.getAttributeCount(ConfigUtil.MONITOR_PRODUCT_NAME) );
+        // System.out.println( Monitor.getAttributeCount(ConfigUtil.MONITOR_PRODUCT_NAME) );*/
 
     }
 
@@ -2083,11 +2080,11 @@ public class MainTest {
     }
 
     public static void test80() throws Exception {
-        RSAUtil rsaUtil = RSAUtil.getInstance();
+/*        RSAUtil rsaUtil = RSAUtil.getInstance();
         rsaUtil.generateKeyPair("D://test//", "test");
         String strPriKey = rsaUtil.getKeyContent("D://test//test_priKey.txt");
         rsaUtil.verify(rsaUtil.getKeyContent("D://test//test_pubKey.txt"), "guoj",
-                       new String(rsaUtil.signature(strPriKey, "guoj"), "utf-8"));
+                       new String(rsaUtil.signature(strPriKey, "guoj"), "utf-8"));*/
     }
 
     public static void test81() {
@@ -2210,12 +2207,12 @@ public class MainTest {
     }
 
     public static void test87() throws Throwable {
-        SFtpClient sftpClient = new SFtpClient("192.168.20.170", 22, "dubbo", "dubbo");
+/*        SFtpClient sftpClient = new SFtpClient("192.168.20.170", 22, "dubbo", "dubbo");
         Vector<LsEntry> vector = (Vector<LsEntry>) sftpClient.listFiles("/home/dubbo");
 
         for (Iterator<LsEntry> iterator = vector.iterator(); iterator.hasNext();) {
             System.out.println(iterator.next().getFilename());
-        }
+        }*/
     }
 
     public static void test88() throws JSONException, ClientProtocolException, IOException {

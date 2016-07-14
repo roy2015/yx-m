@@ -12,7 +12,7 @@ import java.util.concurrent.TimeUnit;
 //import org.junit.Before;
 //import org.junit.Test;
 
-import com.chinatelecom.yiliao.common.protocol.TeamNotify;
+//import com.chinatelecom.yiliao.common.protocol.TeamNotify;
 
 import cn.zj.easynet.rabbitmq.complex.EventControlConfig;
 import cn.zj.easynet.rabbitmq.complex.EventProcesser;
