@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:p="http://www.springframework.org/schema/p"
+	xmlns:context="http://www.springframework.org/schema/context"
+	xmlns:rabbit="http://www.springframework.org/schema/rabbit"
+	xsi:schemaLocation="
+            http://www.springframework.org/schema/beans 
+            http://www.springframework.org/schema/beans/spring-beans-3.0.xsd
+            http://www.springframework.org/schema/context
+            http://www.springframework.org/schema/context/spring-context-3.0.xsd
+            http://www.springframework.org/schema/rabbit
+            http://www.springframework.org/schema/rabbit/spring-rabbit-1.0.xsd">
+
+	<bean id="rabbitConnectionFactory"
+		class="org.springframework.amqp.rabbit.connection.CachingConnectionFactory"
+		p:username="guest" p:password="guest" p:port="5672">
+		<constructor-arg value="192.168.21.3" />
+	</bean>
+
+
+	<rabbit:queue id="QUEUE_TEST_TEMP" durable="true"
+		auto-delete="false" exclusive="false" name="QUEUE_TEST_TEMP" />
+
+	<rabbit:direct-exchange name="EXCHANGE_DIRECT_TEST_TEMP"
+		durable="true" auto-delete="false" id="EXCHANGE_DIRECT_TEST_TEMP">
+		<rabbit:bindings>
+			<rabbit:binding queue="QUEUE_TEST_TEMP" key="QUEUE_TEST_TEMP" />
+		</rabbit:bindings>
+	</rabbit:direct-exchange>
+
+
+	<rabbit:template connection-factory="rabbitConnectionFactory"
+		exchange="EXCHANGE_DIRECT_TEST_TEMP" id="amqpTemplate" routing-key="QUEUE_TEST_TEMP"/>
+
+	<rabbit:admin connection-factory="rabbitConnectionFactory" />
+
+<!-- 	<bean id="foo" class="foo.Foo">
+	</bean> -->
+
+<!-- 	<rabbit:listener-container
+		connection-factory="rabbitConnectionFactory" acknowledge="auto">
+		<rabbit:listener queues="QUEUE_TEST_TEMP" ref="foo" />
+	</rabbit:listener-container> -->
+	
+
+</beans>
+            
