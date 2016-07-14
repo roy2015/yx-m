@@ -8,9 +8,9 @@ import java.util.List;
 import java.util.Map;
 import java.util.concurrent.TimeUnit;
 
-import org.junit.After;
-import org.junit.Before;
-import org.junit.Test;
+//import org.junit.After;
+//import org.junit.Before;
+//import org.junit.Test;
 
 import com.chinatelecom.yiliao.common.protocol.TeamNotify;
 
@@ -52,11 +52,11 @@ public class TestMain {
 //		testSendMsg();
 	}
 	
-	@Before
+//	@Before
 	public void init() throws IOException{
 	}
 	
-	@Test
+//	@Test
 	//取数据
 	public void testGetMsg() throws IOException{
 		RbmqUtil rbmqUtil = RbmqUtil.getInstance();
@@ -89,7 +89,7 @@ public class TestMain {
 		});
 	}
 	
-	@Test
+//	@Test
 	//按顺序发送N个字符串
 	public void testSendMsgSort() throws SendRefuseException{
 		RbmqUtil rbmqUtil = RbmqUtil.getInstance();
@@ -98,7 +98,7 @@ public class TestMain {
 		}
 	}
 	
-	@Test
+//	@Test
 	//发送十个字符串
 	public void testSendMsg() throws SendRefuseException, Exception{
 		RbmqUtil rbmqUtil = RbmqUtil.getInstance();
@@ -109,7 +109,7 @@ public class TestMain {
 		}
 	}
 	
-	@Test
+//	@Test
 	//发送一个map
 	public void testSendMap() throws SendRefuseException{
 		RbmqUtil rbmqUtil = RbmqUtil.getInstance();
@@ -120,7 +120,7 @@ public class TestMain {
 		rbmqUtil.sendMsg(map);
 	}
 	
-	@Test
+//	@Test
 	//发送一个object
 	public void testSendObject() throws SendRefuseException{
 		RbmqUtil rbmqUtil = RbmqUtil.getInstance();
@@ -129,7 +129,7 @@ public class TestMain {
 	
 	
 	
-	@After
+//	@After
 	public void end() throws InterruptedException{
 		TimeUnit.SECONDS.sleep(30);
 	}
