@@ -6,10 +6,11 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.concurrent.TimeUnit;
 
-import org.junit.After;
-import org.junit.Assert;
-import org.junit.Before;
-import org.junit.Test;
+//import org.junit.After;
+//
+//import org.junit.Assert;
+//import org.junit.Before;
+//import org.junit.Test;
 import org.springframework.amqp.core.AmqpTemplate;
 import org.springframework.amqp.core.Message;
 import org.springframework.amqp.rabbit.connection.CachingConnectionFactory;
@@ -50,7 +51,7 @@ public class RabbitMqTest{
 	
 	private EventTemplate eventTemplate;
 	
-	@Before
+//	@Before
 	public void init() throws IOException{
 		EventControlConfig config = new EventControlConfig(defaultHost);
 		controller = DefaultEventController.getInstance(config);
@@ -59,7 +60,7 @@ public class RabbitMqTest{
 		controller.start();
 	}
 	
-	@Test
+//	@Test
 	public void test() throws SendRefuseException {
 		/*EventControlConfig config = new EventControlConfig(defaultHost);
 		CachingConnectionFactory rabbitConnectionFactory;
@@ -82,19 +83,19 @@ public class RabbitMqTest{
 	}
 	
 	
-	@Test
+//	@Test
 	public void sendString() throws SendRefuseException {
 		eventTemplate.send(defaultQueue, defaultExchange, "hello world1");
 		eventTemplate.send(defaultQueue, defaultExchange, "hello world2");
 		eventTemplate.send(defaultQueue, defaultExchange, "hello world3");
 	}
 	
-	@Test
+//	@Test
 	public void sendObject() throws SendRefuseException{
 		eventTemplate.send(defaultQueue, defaultExchange, mockObj());
 	}
 	
-	@Test
+//	@Test
 	public void sendTemp() throws SendRefuseException, InterruptedException{
 		String tempExchange = "EXCHANGE_DIRECT_TEST_TEMP";//以前未声明的exchange
 		String tempQueue = "QUEUE_TEST_TEMP";//以前未声明的queue
@@ -103,7 +104,7 @@ public class RabbitMqTest{
 //		controller.add(tempQueue, tempExchange, new ApiProcessEventProcessor());
 	}
 	
-	@After
+//	@After
 	public void end() throws InterruptedException{
 		Thread.sleep(2000000);
 	}
