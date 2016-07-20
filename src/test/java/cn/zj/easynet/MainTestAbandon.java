@@ -29,7 +29,7 @@ import cn.zj.easynet.util.Utils;
 import cn.zj.easynet.util.ZXAgentUtil;
 
 import com.alibaba.fastjson.JSON;
-import com.netease.om.Monitor;
+//import com.netease.om.Monitor;
 
 public class MainTestAbandon {
 
