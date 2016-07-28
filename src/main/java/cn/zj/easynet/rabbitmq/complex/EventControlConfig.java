@@ -11,26 +11,31 @@ public class EventControlConfig {
 
 	private final static int DEFAULT_PORT = 5672;
 	
-	private final static String DEFAULT_USERNAME = "guest";
+//	private final static String DEFAULT_USERNAME = "guest";
+	private final static String DEFAULT_USERNAME = "v8_test";
 	
-	private final static String DEFAULT_PASSWORD = "1qaz2wsx";
-	
+//	private final static String DEFAULT_PASSWORD = "1qaz2wsx";
+	private final static String DEFAULT_PASSWORD = "v8_test";
+
+//	private final static String DEFAULT_VIRTUAL_HOST = null;
+	private final static String DEFAULT_VIRTUAL_HOST = "v8_test";
+
 //	private final static int DEFAULT_PROCESS_THREAD_NUM = Runtime.getRuntime().availableProcessors() * 2;
 	//注释上面那行
 	private final static int DEFAULT_PROCESS_THREAD_NUM = 1;
-	
+
 	private static final int PREFETCH_SIZE = 1;
-	
+
 	private String serverHost ;
-	
+
 	private int port = DEFAULT_PORT;
-	
+
 	private String username = DEFAULT_USERNAME;
-	
+
 	private String password = DEFAULT_PASSWORD;
-	
+
 	private String virtualHost;
-	
+
 	/**
 	 * 和rabbitmq建立连接的超时时间
 	 */
@@ -47,7 +52,7 @@ public class EventControlConfig {
 	private int prefetchSize;
 	
 	public EventControlConfig(String serverHost) {
-		this(serverHost,DEFAULT_PORT,DEFAULT_USERNAME,DEFAULT_PASSWORD,null,0,DEFAULT_PROCESS_THREAD_NUM,DEFAULT_PROCESS_THREAD_NUM,new HessionCodecFactory());
+		this(serverHost,DEFAULT_PORT,DEFAULT_USERNAME,DEFAULT_PASSWORD,DEFAULT_VIRTUAL_HOST,0,DEFAULT_PROCESS_THREAD_NUM,DEFAULT_PROCESS_THREAD_NUM,new HessionCodecFactory());
 	}
 
 	public EventControlConfig(String serverHost, int port, String username,

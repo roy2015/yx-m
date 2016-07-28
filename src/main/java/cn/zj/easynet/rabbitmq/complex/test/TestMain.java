@@ -26,7 +26,7 @@ public class TestMain {
 		RbmqUtil rbmqUtil = RbmqUtil.getInstance();
 		
 		//消费者
-		rbmqUtil.getMsg(new EventProcesser() {
+/*		rbmqUtil.getMsg(new EventProcesser() {
 			@Override
 			public void process(Object e) {//消费程序这里只是打印信息
 				System.out.println("**********开始****"+ Thread.currentThread().getName() +"*******************");
@@ -46,10 +46,10 @@ public class TestMain {
 					e1.printStackTrace();
 				}
 			}
-		});
+		});*/
 		
 		//生产者
-//		testSendMsg();
+		testSendMsg();
 	}
 	
 //	@Before
@@ -103,7 +103,7 @@ public class TestMain {
 	public void testSendMsg() throws SendRefuseException, Exception{
 		RbmqUtil rbmqUtil = RbmqUtil.getInstance();
 //		rbmqUtil.sendMsg();
-		for(int i=0; i<100 ; i++){
+		for(int i=0; i<10 ; i++){
 			new Thread(new SendMsgTask(i, rbmqUtil)).start();
 //			TimeUnit.MILLISECONDS.sleep(300);
 		}
@@ -187,7 +187,8 @@ public class TestMain {
 	}
 	
 	public static void main(String[] args) throws SendRefuseException, Exception {
-		new TestMain().testMain();
+//		new TestMain().testMain();
+		new TestMain().testSendObject();
 	}
 
 }

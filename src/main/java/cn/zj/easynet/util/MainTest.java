@@ -2146,7 +2146,7 @@ public class MainTest {
     }
 
     /**
-     * BigDecimal四舍五入
+     * BigDecimal全测试
      */
     public static void test84() {
         BigDecimal bigDecimal = BigDecimal.valueOf(2045L);
@@ -2157,14 +2157,15 @@ public class MainTest {
         BigDecimal bd2 = new java.math.BigDecimal(10.12);
 
         BigDecimal bd3 = bd1.multiply(bd2);
-        System.out.println(bd3);
+        System.out.println("bd3: ======" + bd3);
+        System.out.println("bd3.doubleValue():＝＝＝＝＝＝＝"+ bd3.doubleValue());
 
         NumberFormat nf = new DecimalFormat("#,###.####");
         System.out.println(nf.format(bd3.doubleValue()));
 
         System.out.println(bd3.setScale(4, RoundingMode.HALF_UP));
 
-        MathContext mc = new MathContext(9, RoundingMode.HALF_UP);
+        MathContext mc = new MathContext(20, RoundingMode.HALF_UP);
         System.out.println(bd3.round(mc));
 
         BigDecimal bd4 = BigDecimal.valueOf(1223, 2);
@@ -2453,7 +2454,7 @@ public class MainTest {
         // test81();
         // test82();
         // test83();
-        // test84();
+         test84();
         // test85();
         // test86();
 //        test87();
@@ -2466,8 +2467,8 @@ public class MainTest {
         System.out.println(uuid.replaceAll("[^0-9a-zA-Z]", ""));*/
         
 //        test94();
-    	Dto1 dto1 =  new Dto1();
+    	/*Dto1 dto1 =  new Dto1();
     	Dto2 dto2 =  new Dto2();
-    	System.out.println(dto1.temp(dto2.getClass()).getClass());
+    	System.out.println(dto1.temp(dto2.getClass()).getClass());*/
     }
 }

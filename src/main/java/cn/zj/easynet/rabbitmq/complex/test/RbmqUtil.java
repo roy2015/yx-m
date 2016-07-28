@@ -10,15 +10,18 @@ import cn.zj.easynet.rabbitmq.complex.impl.DefaultEventController;
 import cn.zj.easynet.rabbitmq.complex.test.RabbitMqTest.ApiProcessEventProcessor;
 
 public class RbmqUtil {
-	private String defaultHost = "192.168.21.3";
+//	private String defaultHost = "192.168.21.3";
 //	private String defaultHost = "172.23.4.65";
+	private String defaultHost = "rabbitmq-test-master-1.800best.com";
 	
-	private String defaultExchange = "EXCHANGE_DIRECT_TEST";
+//	private String defaultExchange = "EXCHANGE_DIRECT_TEST";
 //	private String defaultExchange = "EXCHANGE_DIRECT_TEST_TEMP";
+	private String defaultExchange = "EXCHANGE_DIRECT_TEST";
 	
 	
-	private String defaultQueue = "QUEUE_TEST";
+//	private String defaultQueue = "QUEUE_TEST";
 //	private String defaultQueue = "QUEUE_TEST_TEMP";
+	private String defaultQueue = "QUEUE_TEST";
 	
 	private DefaultEventController controller;
 	
