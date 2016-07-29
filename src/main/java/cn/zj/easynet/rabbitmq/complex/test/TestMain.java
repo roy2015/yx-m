@@ -188,7 +188,8 @@ public class TestMain {
 	
 	public static void main(String[] args) throws SendRefuseException, Exception {
 //		new TestMain().testMain();
-		new TestMain().testSendObject();
+//		new TestMain().testSendObject();
+		new TestMain().testGetMsg();
 	}
 
 }
