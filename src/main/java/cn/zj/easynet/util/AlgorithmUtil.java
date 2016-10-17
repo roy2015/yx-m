@@ -35,7 +35,8 @@ public class AlgorithmUtil {
 		} catch (Exception e) {}
 		return null;
 	}
-	
+
+	//少了0x100  ,区别：0只能八位，成为不了16位
 	public static String md5_2(String src) {
         if (src == null)
             throw new IllegalArgumentException("Password can NOT be null");
@@ -45,7 +46,7 @@ public class AlgorithmUtil {
             byte[] array = md.digest(src.getBytes());
             StringBuffer sb = new StringBuffer();
             for (int i = 0; i < array.length; ++i) {
-                sb.append(Integer.toHexString(array[i]));
+                sb.append(Integer.toHexString((array[i] & 0xFF)));
             }
             return sb.toString();
         } catch (NoSuchAlgorithmException e) {}
@@ -53,9 +54,9 @@ public class AlgorithmUtil {
     }
 	
 	public static void main(String[] args) {
-		System.out.println(Integer.toBinaryString(-5));
+		System.out.println(Integer.toHexString(123));
 		String md1 = md5("123");
-	    String md2 = md5_1("123");
+	    String md2 = md5_2("123");
 		System.out.println(String.format("md1: %s ,md1.length(): %s", md1, md1.length()));
 		System.out.println(String.format("md2: %s ,md2.length(): %s", md2, md2.length()));
 		
