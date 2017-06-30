@@ -5,6 +5,7 @@ import org.apache.log4j.Logger;
 import org.springframework.beans.BeanUtils;
 
 import java.text.SimpleDateFormat;
+import java.util.ArrayList;
 import java.util.HashMap;
 
 /**
@@ -38,6 +39,23 @@ public class DailyTest {
         System.out.println(localMap.size());
     }
 
+    // check
+    public static void test4(){
+        ArrayList al=new ArrayList();
+        al.add("1");
+        al.add("2");
+        al.add("3");
+        al.add("4");
+        al.add("xxx");
+        al.add("n-1");
+        al.add("n");
+        for(Object o:al){
+            if("n".equals(o)){
+                al.remove(o);
+            }
+        }
+    }
+
     public static void test2() {
         Integer d1 = Integer.valueOf(103);
         Integer d2 = Integer.valueOf(103);
@@ -55,7 +73,8 @@ public class DailyTest {
 //        test1();
 //        testGeric();
 //        test2();
-        test3();
+//        test3();
 
+        test4();
     }
 }
