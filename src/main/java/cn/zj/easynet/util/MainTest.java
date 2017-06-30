@@ -2452,9 +2452,9 @@ public class MainTest {
         // test79();
         // test80();
         // test81();
-        // test82();
+         test82();
         // test83();
-         test84();
+//         test84();
         // test85();
         // test86();
 //        test87();

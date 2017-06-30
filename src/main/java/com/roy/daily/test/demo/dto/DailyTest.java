@@ -1,9 +1,11 @@
 package com.roy.daily.test.demo.dto;
 
+import cn.zj.easynet.util.ThreadLocalUtil;
 import org.apache.log4j.Logger;
 import org.springframework.beans.BeanUtils;
 
 import java.text.SimpleDateFormat;
+import java.util.HashMap;
 
 /**
  * Created by apple on 2017/6/3.
@@ -30,6 +32,12 @@ public class DailyTest {
         System.out.println(p2);
     }
 
+    //test threadLocal
+    public static void test3(){
+        HashMap<String , Object> localMap =  ThreadLocalUtil.THREAD_LOCAL.get();
+        System.out.println(localMap.size());
+    }
+
     public static void test2() {
         Integer d1 = Integer.valueOf(103);
         Integer d2 = Integer.valueOf(103);
@@ -46,7 +54,8 @@ public class DailyTest {
     public static void main(String[] args) throws Exception {
 //        test1();
 //        testGeric();
-        test2();
+//        test2();
+        test3();
 
     }
 }
